@@ -1,0 +1,195 @@
+document.write('<link rel="stylesheet" type="text/css" href="https://co.99.com/resource/css/public.css?v20230517">');
+
+var gid = 'UA-49242417-1'; //check the value from google analysis and edit it for each site
+document.write('<script async src="https://www.googletagmanager.com/gtag/js?id='+gid+'"></script><script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag("js", new Date());gtag("config", "'+gid+'");</script>');
+//GA4
+var domain = window.location.host;
+var ga4id;
+if(domain == 'encoevent.99.com'){
+	ga4id = 'G-942421VD45';  //活动站
+}
+else if(domain == 'shoppingmall.99.com'){
+	ga4id = 'G-QWMH3RB5Z1';  //支付站
+}
+else if(domain == 'account.99.com'){
+	ga4id = 'G-TEWCTMN7PS';  //客服中心
+}
+else {
+	ga4id = 'G-VL37GRT6X0'; //官网及其他
+}
+document.write('<script async src="https://www.googletagmanager.com/gtag/js?id='+ga4id+'"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config","'+ga4id+'");</script>');
+
+var cosite ={
+	fn: {
+
+		logo : function(){
+			var logoHtml = '<a href="https://co.99.com/index/" title="Conquer Online Official Site" target="_blank" class="logo"><img src="https://hw.99.com/uploads/co/images/2023/logo/logo.png" alt="Conquer Online"></a>';
+			document.write(logoHtml);
+		},
+		//头部通用信息条
+		menu: function(){
+			var menuHtml = '<div class="topbar" id="topbar">' +
+								'<div class="topmenu clearfix">' +
+									'<div class="links">' +
+										'<a href="https://account.99.com/v3/index.htm" target="_blank">Customer Service</a>' +
+									'</div>' +
+									'<p>|</p>' +
+									'<div class="games">' +
+										'<p>Conquer Online <i></i></p>' +
+										'<ul>' +
+											'<li data-id="en">Conquer Online</li>' +
+											'<li data-id="sp">Conquista Online</li>' +
+											'<li data-id="ar">قهر اونلاين</li>' +
+											'<li data-id="enm">CO Mobile</li>' +
+											'<li data-id="cop" style="padding: 0 5px;width: 135px;">Conquer Domino</li>' +
+										'</ul>' +
+									'</div>' +
+								'</div>' +	
+							'</div>';
+			document.write(menuHtml);
+
+			$('.games > ul li').on('click',function(){
+				var type = $(this).attr('data-id');
+				switch(type){
+					case 'en':
+					window.location.href='https://co.99.com/index/';
+					break;
+					case 'sp':
+					window.location.href='https://conquista.99.com/index/';
+					break;
+					case 'ar':
+					window.location.href='https://qahr.99.com/index/';
+					break;
+					case 'enm':
+					window.location.href='https://comobile.99.com/';
+					break;
+					case 'cop':
+					window.location.href='https://co.99.com/guide/event/ConquerDomino/';
+					break;
+				}
+
+			})
+		},
+
+		//通用导航
+		// nav: function(){
+		// 	var navHtml = '<ul id="common-nav" class="common-nav clearfix"><li><a href="https://co.99.com/index/" title="Home">Home</a></li><li><a target="_blank" href="https://account.99.com/v3/signup.htm?flag=commonco&platcode=http://co.99.com/commonads" title="Sign Up">Sign Up</a></li><li><a href="https://co.99.com/downloads/" title="Download">Download</a><ul class="common-subnav"><li><a href="https://co.99.com/downloads/" title="Client">Client(PC/Mac)</a></li><li><a href="https://co.99.com/downloads/patch.shtml" title="Patches">Patches</a></li></ul></li><li><a href="https://co.99.com/guide/guides/gameplay.shtml" title="Guide">Guide</a><ul class="common-subnav"><li><a href="https://co.99.com/guide/quests/schedule.shtml">Quests Schedule</a></li><li><a href="https://co.99.com/guide/npc/new_co_npc_coordinates_list.shtml" title="NPC">NPC</a></li><li><a href="https://co.99.com/guide/quests/quests.shtml" title="Quests">Quests</a></li><li><a href="https://co.99.com/guide/items/items.shtml" title="Item">Items</a></li><li><a href="https://co.99.com/guide/atlas/atlas.shtml" title="Maps">Maps</a></li><li><a href="https://co.99.com/guide/info/mounts.shtml" title="Mounts">Mounts</a></li><li><a href="https://co.99.com/guide/classes/" title="Classes">Classes</a></li><li><a href="https://co.99.com/guide/skills/skillsintro.shtml" title="Skills">Skills</a></li><li><a href="https://co.99.com/guide/info/pvp.shtml" title="PVP">PVP</a></li><li><a href="https://co.99.com/guide/event/all_version_overview.shtml" title="Version">Version</a></li><li><a href="https://co.99.com/guide/guides/gameplay.shtml" title="More">More...</a></li></ul></li><li><a href="https://co.99.com/guide/event/latest_events.shtml" title="Events">Events</a></li><li><a href="http://co.rank.99.com/enzf/" target="_blank" title="Rankings">Rankings</a><ul class="common-subnav"><li><a href="http://co.rank.99.com/enzf/">Top Players</a></li><li><a href="http://co.rank.99.com/enzf/ko">KO Board</a></li><li><a href="http://co.rank.99.com/enzf/guild">Guild Winners</a></li></ul></li><li><a href="javascript:;"  title="Media">Media</a><ul class="common-subnav"><li><a href="https://co.99.com/downloads/gallery/artwork.shtml" target="_blank" title="Game Artworks">Game Artworks</a></li><li><a href="http://wp.99.com/list/co/list2015.shtml" title="Wallpapers">Wallpapers</a></li><li><a href="https://co.99.com/activity/avatar.shtml" title="Avatars">Avatars</a></li></ul></li><li><a href="https://shoppingmall.99.com/en/web/index.aspx?gametype=104_100" target="_blank" title="Store">Store</a><ul class="common-subnav"><li><a href="https://shoppingmall.99.com/en/web/index.aspx?gametype=104_100" target="_blank" title="Buy CPs">Buy CPs</a></li><li><a href="https://shoppingmall.99.com/en/web/offline.aspx?gametype=104_100" target="_blank" title="Redeem Point">Redeem Point</a></li><li><a href="https://shoppingmall.99.com/en/web/treasure.aspx?gametype=104_100" target="_blank" title="Treasure Mall">Treasure Mall</a></li></ul></li><li><a href="https://vips.99.com/web20/COindex.aspx" target="_blank" title="VIP">VIP</a></li><li class=""><a href="https://account.99.com/v3/index.htm" title="Support">Support</a></li></ul>';
+
+		// 	document.write(navHtml);
+
+		// 	var $navbox = $(".common-nav");
+		// 	$navbox.find("li").hover(function(){
+		// 		$(this).children("ul").fadeIn();
+		// 		$(this).addClass("on");
+		// 	},function(){
+		// 		$(this).children("ul").hide();
+		// 		$(this).removeClass("on");
+		// 	})
+		// },
+
+		//通用导航
+		nav: function(){
+			var navHtml = '<div class="top-nav"><ul id="common-nav" class="navbar"><li><a href="http://co.99.com/index/" class="n1" title="Home">Home</a></li><li><a target="_blank" href="https://account.99.com/v3/signup.htm?flag=commonco&platcode=http://co.99.com/commonads" class="n2" title="Sign Up">Sign Up</a></li><li><a href="http://co.99.com/downloads/" class="n3" title="Download">Download</a><ul class="subnavbar"><li><a href="http://co.99.com/downloads/" title="Client">Client(PC/Mac)</a></li><li><a href="http://co.99.com/downloads/patch.shtml" title="Patches">Patches</a></li></ul></li><li><a href="http://co.99.com/guide/guides/gameplay.shtml" class="n4" title="Guide">Guide</a></li><li><a href="http://co.99.com/guide/event/latest_events.shtml" class="n5" title="Events">Events</a></li><li><a href="http://co.rank.99.com/enzf/" target="_blank" class="n6" title="Rankings">Rankings</a><ul class="subnavbar"><li><a href="http://co.rank.99.com/enzf/">Top Players</a></li><li><a href="http://co.rank.99.com/enzf/ko">KO Board</a></li><li><a href="http://co.rank.99.com/enzf/guild">Guild Winners</a></li></ul></li><li><a href="javascript:;" class="n7" title="Media">Media</a><ul class="subnavbar"><li><a href="http://co.99.com/downloads/gallery/artwork.shtml" target="_blank" title="Game Artworks">Game Artworks</a></li><li><a href="http://co.99.com/activity/avatar.shtml" title="Avatars">Avatars</a></li></ul></li><li><a href="https://shoppingmall.99.com/en/web/index.aspx?gametype=104_100" target="_blank" class="n8" title="Store">Store</a><ul class="subnavbar"><li><a href="https://shoppingmall.99.com/en/web/index.aspx?gametype=104_100" target="_blank" title="Buy CPs">Buy CPs</a></li><li><a href="https://shoppingmall.99.com/en/web/offline.aspx?gametype=104_100" target="_blank" title="Redeem Point">Redeem Point</a></li><li><a href="https://shoppingmall.99.com/en/web/treasure.aspx?gametype=104_100" target="_blank" title="Treasure Mall">Treasure Mall</a></li></ul></li><li><a href="https://vips.99.com/web20/COindex.aspx" target="_blank" class="n9" title="VIP">VIP</a><ul class="subnavbar"><li><a href="https://encoevent.99.com/newsvipcenter/" target="_blank" title="SVIP">SVIP</a></li></ul></li><li><a href="https://account.99.com/v3/index.htm" class="n10" title="Support">Support</a><ul class="subnavbar"><li><a href="https://co.99.com/news/2021-02-08/official_conquer_staff_fb_links.shtml" target="_blank" title="Official Staff">Official Staff</a></li></ul></li></ul><div class="sub-bg"></div></div>';
+			document.write(navHtml);
+			$('.top-nav .subnavbar a').hover(
+				function () {
+				var txt = $(this).html();
+				txt = txt+' >';
+				$(this).html(txt)
+				},
+				function(){
+					var txt = $(this).html();
+					var chars='>';
+					txt = txt.substring(0, txt.length- 5);
+					$(this).html(txt)
+				}
+			);
+			
+			$('.top-nav').hover(
+				function(){
+					var dlW = document.documentElement.clientWidth;
+					var parentWidth = $('.top-nav').parent().width();
+					var left = -(dlW-parentWidth)/2;
+					var width=dlW
+					$('.top-nav .sub-bg').css({'left':left,'width':width})
+				}
+			);
+
+			var $navbox = $(".top-nav");
+			$navbox.find("li").hover(function(){
+				$(this).children("ul").fadeIn();
+				$(this).addClass("on");
+			},function(){
+				$(this).children("ul").hide();
+				$(this).removeClass("on");
+			})
+		},
+
+		//通用底部
+		footer: function(){
+			var footerHtml = '<p>Copyright © 2003-2024 Netdragon Websoft (Hong Kong) Limited All Rights Reserved.<p>' +
+							 '<div class="flink">' +
+								'<a target="_blank" href="https://account.99.com/v3/read.htm">Terms of Service</a> | ' +
+								'<a target="_blank" href="https://co.99.com/guide/faqs.shtml">FAQ</a> | ' +
+								'<a target="_blank" href="https://co.99.com/guide/guides/uninstall.shtml">Uninstall</a> | ' +
+								'<a target="_blank" href="https://co.99.com/guide/info/contact.shtml">Contact Us</a> | ' +
+								'<a target="_blank" href="https://co.99.com/guide/sitemap.shtml">Site Map</a> | ' +
+							 '</div>';
+			document.write(footerHtml);
+		},
+
+		//首页特殊通用底部
+		// indexfooter: function(){
+		// 	var indexFooterHtml = '<div class="ccont">'+
+		// 					'<p class="sp">Download Platform</p>'+
+		// 					'<p class="t_center pts">'+
+		// 						'<a href="https://co.99.com/downloads/" title="CO for PC" target="_blank" class="pt1"></a>'+
+		// 						'<a href="https://co.99.com/downloads/" title="CO for Mac" target="_blank" class="pt2"></a>'+
+		// 						'<a href="https://itunes.apple.com/us/app/conquer-online/id459012102?mt=8&ign-mpt=uo%3D4" title="CO for iOS" target="_blank"class="pt3"></a>'+
+		// 						'<a href="https://play.google.com/store/apps/details?id=com.Tq.CQ2ClientAndroid" title="CO for Android" target="_blank" class="pt4"></a>'+
+		// 					'</p>'+
+		// 					'<p>Copyright © 2003-2024 Netdragon Websoft (Hong Kong) Limited All Rights Reserved.</p>'+
+		// 				'</div>'+
+		// 				'<div class="side">'+
+		// 					'<a href="https://account.99.com/v3/read.htm" target="_blank">| Terms of Service</a>'+
+		// 					'<a href="https://co.99.com/guide/faqs.shtml" target="_blank">| FAQ</a>'+
+		// 					'<a href="https://co.99.com/guide/guides/uninstall.shtml" target="_blank">| Uninstall</a>'+
+		// 					'<a href="https://co.99.com/guide/info/contact.shtml" target="_blank">| Contact Us</a>'+
+		// 					'<a href="https://co.99.com/guide/policy.shtml" target="_blank">| Privacy Policy</a>'+
+		// 					'<a href="https://co.99.com/guide/sitemap.shtml" target="_blank">| Site Map</a>'+
+		// 				'</div>';
+		// 	document.write(indexFooterHtml);
+		// },
+
+		indexfooter: function(){
+			var indexFooterHtml = '<div class="ccont">'+
+									'<p class="sp">Download Platform</p>'+
+									'<p class="t_center pts">'+
+									'<a href="https://co.99.com/downloads/" title="CO for PC" target="_blank" class="pt1"></a>'+
+									'<a href="https://co.99.com/downloads/" title="CO for Mac" target="_blank" class="pt2"></a>'+
+									'<a href="https://itunes.apple.com/us/app/conquer-online/id459012102?mt=8&amp;ign-mpt=uo%3D4" title="CO for iOS" target="_blank" class="pt3"></a>'+
+									'<a href="https://play.google.com/store/apps/details?id=com.Tq.CQ2ClientAndroid" title="CO for Android" target="_blank" class="pt4"></a>'+
+									'</p>'+
+									'<div class="side">'+
+									'<a href="https://account.99.com/v3/read.htm" target="_blank">| Terms of Service</a>'+
+									'<a href="https://co.99.com/guide/faqs.shtml" target="_blank">| FAQ</a>'+
+									'<a href="https://co.99.com/guide/guides/uninstall.shtml" target="_blank">| Uninstall</a>'+
+									'<a href="https://co.99.com/guide/info/contact.shtml" target="_blank">| Contact Us</a>'+
+									'<a href="https://co.99.com/guide/policy.shtml" target="_blank">| Privacy Policy</a>'+
+									'<a href="https://co.99.com/guide/sitemap.shtml" target="_blank">| Site Map</a>'+
+									'</div>'+
+									'<p>Copyright © 2003-2024 Netdragon Websoft (Hong Kong) Limited All Rights Reserved.</p>'+
+									'</div>';
+			document.write(indexFooterHtml);
+		}
+
+
+	}
+		
+}
+
+	
+$(function(){
+	//cosite.fn.ga();
+})
+

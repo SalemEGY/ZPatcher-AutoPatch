@@ -1,0 +1,93 @@
+function cdn_test() {
+    this.urls = new Array();
+    this.urls['1'] = new Array();
+    this.urls['1']['url'] = 'event.co.99.com/evaluate/view/images/logo.png';
+    this.urls['2'] = new Array();
+    this.urls['2']['url'] = 'test1.ucloud.99.com/test.png';
+    this.urls['3'] = new Array();
+    this.urls['3']['url'] = 'event1.co.99.com/logo.png';
+    this.urls['4'] = new Array();
+    this.urls['4']['url'] = 'event2.co.99.com/logo.png';
+    this.urls['5'] = new Array();
+    this.urls['5']['url'] = 'event3.co.99.com/logo.png';
+    this.urls['6'] = new Array();
+    this.urls['6']['url'] = 'event4.co.99.com/logo.png';
+    this.urls['7'] = new Array();
+    this.urls['7']['url'] = 'event5.co.99.com/logo.png';
+    this.urls['8'] = new Array();
+    this.urls['8']['url'] = 'event6.co.99.com/logo.png';
+    this.urls['9'] = new Array();
+    this.urls['9']['url'] = 'event7.co.99.com/logo.png';
+    this.urls['10'] = new Array();
+    this.urls['10']['url'] = 'event8.co.99.com/logo.png';
+    this.urls['11'] = new Array();
+    this.urls['11']['url'] = 'event9.co.99.com/logo.png';
+    this.urls['12'] = new Array();
+    this.urls['12']['url'] = 'event10.co.99.com/logo.png';
+    this.urls['13'] = new Array();
+    this.urls['13']['url'] = 'event11.co.99.com/logo.png';
+    this.urls['14'] = new Array();
+    this.urls['14']['url'] = 'event12.co.99.com/logo.png';
+    this.urls['15'] = new Array();
+    this.urls['15']['url'] = 'event13.co.99.com/logo.png';
+    this.urls['16'] = new Array();
+    this.urls['16']['url'] = 'event14.co.99.com/logo.png';
+    this.urls['17'] = new Array();
+    this.urls['17']['url'] = 'event15.co.99.com/logo.png';
+    this.urls['18'] = new Array();
+    this.urls['18']['url'] = 'event16.co.99.com/logo.png';
+    this.urls['19'] = new Array();
+    this.urls['19']['url'] = 'event17.co.99.com/logo.png';
+    this.urls['20'] = new Array();
+    this.urls['20']['url'] = 'event18.co.99.com/logo.png';
+    this.urls['21'] = new Array();
+    this.urls['21']['url'] = 'event19.co.99.com/logo.png';
+    this.urls['22'] = new Array();
+    this.urls['22']['url'] = 'event20.co.99.com/logo.png';
+
+	this.urls['23'] = new Array();
+    this.urls['23']['url'] = '170.33.9.35:6001/logo.png';
+    this.urls['24'] = new Array();
+    this.urls['24']['url'] = '170.33.9.35:6002/logo.png'; 
+ 
+
+
+    this.predns = new Date();
+
+    for (var i in this.urls) {
+        this.urls[i]['url'] = 'http://' + this.urls[i]['url'] + '?' + this.predns.getTime();
+    }
+    this.run = function() {
+        //����ʱ��
+       /*  this.cur_time = new Date().getTime();
+        this.s_timelimit = 1345132800 * 1000;
+        this.e_timelimit = 1376668800 * 1000;
+        if (this.cur_time < this.s_timelimit || this.cur_time > this.e_timelimit) {
+            return false;
+        } */
+        this.oNewNode = document.createElement("DIV");
+        this.oNewNode.setAttribute('id', 'id_cdn_test_div');
+        document.body.appendChild(this.oNewNode);
+        for (var i in this.urls) {
+            this.test(i);
+            //break;
+        }
+        return false;
+    }
+    this.test = function(id) {
+        document.getElementById('id_cdn_test_div').innerHTML += '<img src="' + this.urls[id]['url'] + '" width="0" height="0" />';
+        return false;
+    }
+}
+
+var cdnobj = new cdn_test();
+function cdntestrun() {
+    cdnobj.run();
+}
+if (window.addEventListener) window.addEventListener('load', cdntestrun, false);
+else if (document.addEventListener) document.addEventListener('load', cdntestrun, false);
+else if (window.attachEvent) window.attachEvent('onload', cdntestrun);
+else {
+    if (window.onload) window.XTRonload = window.onload;
+    window.onload = cdntestrun;
+}
