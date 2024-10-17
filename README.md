@@ -11,7 +11,7 @@ ZPatcher is designed to replicate the original Conquer Online patcher, developed
 - No Need For AutoPatch Server or Depands On Socket Connect
 - Animated Logo Added 3/10/2024
 
-## Screenshot
+## Screenshot 
 ![ZPatcher Screenshot](https://github.com/SalemEGY/ZPatcher-AutoPatch/blob/main/ZPatcher.png)
 
 ## YouTube Demo & Installation
